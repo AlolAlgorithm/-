@@ -80,10 +80,12 @@ public class Main {
                     continue;
                 }
                 
-                car.r = nX;
-                car.c = nY;
-                car.d = nextDir;
-                break;
+                if(!visited[nX][nY] && map[nX][nY]==0){
+                    car.r = nX;
+                    car.c = nY;
+                    car.d = nextDir;
+                    break;
+                }
             }
 
             // 4방향 모두 돌았는지 체크하기 위해서는 기준의 cX, cY와 현재의 car의 r과 c를 비교
